@@ -4,6 +4,30 @@ importScripts("https://www.gstatic.com/firebasejs/7.2.1/firebase-messaging.js");
 importScripts("https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js");
 importScripts("push_message.js");
 
+// CAUTION : this should be always here if not then it will not work on mozilla browser! it should always be before it const messaging = firebase.messaging();
+self.addEventListener("notificationclick", function(event) {
+  console.log(event.notification);
+  const data = event.notification.data;
+
+  event.notification.close();
+
+  if (event.action === "actionA") {
+    clients.openWindow(data.actionA);
+    // silentlyLikeItem();
+  } else if (event.action === "actionB") {
+    clients.openWindow(data.actionB);
+  } else {
+    // if user click on the notifiction itself
+    event.waitUntil(clients.openWindow(data.url));
+  }
+});
+
+self.addEventListener("notificationclose", function(e) {
+  var notification = e.notification;
+  var data = notification;
+  console.log("Closed notification: ", data);
+});
+
 // Initialize the Firebase app in the service worker by passing in the
 // messagingSenderId.
 var config = {
@@ -27,30 +51,4 @@ messaging.setBackgroundMessageHandler(function(payload) {
     notificationTitle,
     notificationOptions
   );
-});
-
-self.addEventListener("notificationclick", function(event) {
-  console.log(event.notification);
-  const data = event.notification.data;
-
-  event.notification.close();
-
-  if (event.action === "coffee-action") {
-    console.log("if");
-    clients.openWindow(data.a);
-    // silentlyLikeItem();
-  } else if (event.action === "doughnut-action") {
-    console.log("else if");
-    clients.openWindow("doughnut");
-  } else {
-    // if user click on the notifiction itself
-    console.log("else");
-    event.waitUntil(clients.openWindow("http://raja.com"));
-  }
-});
-
-self.addEventListener("notificationclose", function(e) {
-  var notification = e.notification;
-  var data = notification;
-  console.log("Closed notification: ", data);
 });

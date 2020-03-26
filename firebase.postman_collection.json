@@ -99,6 +99,42 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Send Notification",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "key=AAAATSlvb9A:APA91bG-8vGnhwqiZRn5yaFeM1ngnPR1sm8B4HTiaV6-i3Sy9qaqHEI8zC8FdTvfujI1G7Y6TV1QW1hUx-C5s-CAJNEMftM4MstK61wvdeYn0TU5Bln5AggdyoqEAuKBsRzbRKqEDyf5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"to\":\"cxhuTJ2ayxsdrefYBd0uFi:APA91bFuLnsHIyp-XYnx0OlkuHtPigaGTwsl9vdzdMX1FE1_UJ_vb4EhKqh0CVpLrpGpOiTMJ8sAnXbnsJ6vyWUuwFhjt_omadlquIzajAxvdbgWQBShk5N4tRoKNHnJ6DeS5NHfqf-k\",\n    \"data\": {\n        \"notification\": {\n            \"title\": \"FCM Message\",\n            \"body\": \"This is an FCM Message\",\n            \"icon\": \"https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png\",\n            \"image\": \"https://web-push-book.gauntface.com/images/demos/unsplash-farzad-nazifi-1600x1100.jpg\",\n            \"badge\": \"https://web-push-book.gauntface.com/images/demos/badge-128x128.png\",\n            \"timestamp\": \"1585217717\",\n            \"data\": {\n                \"actionA\": \"this is the url for first button\",\n                \"actionB\": \"this is the url for second button\",\n                \"url\": \"https://googles.com\"\n            },\n            \"actions\": [\n                {\n                    \"action\": \"actionA\",\n                    \"title\": \"Tea\",\n                    \"icon\": \"https://web-push-book.gauntface.com/images/demos/action-1-128x128.png\"\n                },\n                {\n                    \"action\": \"actionB\",\n                    \"title\": \"Doughnut\",\n                    \"icon\": \"https://web-push-book.gauntface.com/images/demos/action-2-128x128.png\"\n                }\n            ]\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fcm.googleapis.com/fcm/send",
+					"protocol": "https",
+					"host": [
+						"fcm",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"fcm",
+						"send"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
