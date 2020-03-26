@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+  $.getJSON('http://anyorigin.com/get?url=https://ipinfo.io/widget/15.206.80.215&callback=?', function (data) {
+    $('#output').html(data.contents);
+  });
+</script>
+
+</html>
