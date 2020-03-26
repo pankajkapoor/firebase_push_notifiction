@@ -41,3 +41,22 @@ curl -X POST -H "Authorization: key=AAAAVuvkGx0:APA91bHdBSEZkrv4t1xn7pARbifN3EYu
 curl --location --request GET 'https://iid.googleapis.com/iid/info/esHa4rym1DT_ZefcYXviY2:APA91bHVTWUCaOpDGIThzVTEwgb_QJkfJKc4lNt0wdqHbRrRA7N5nO9zaXZ7EkgyvDoEmQAAoDGCFZQCs-F-2b56FhqGx729xUZe-3EsYSM_dYcwcPCVqWLx_NQVZ_U3ftk2BVoGpeIk' \
 --header 'Authorization: key=AAAAVuvkGx0:APA91bHdBSEZkrv4t1xn7pARbifN3EYuRpKOttsJXOrYJLxOIyMC8LCbnxMg5dshLid19YPk0Q8siFQjtsdvafmJtT117RVOK_NyJG3N9RJCtBJq6G3n3vLijNualLvjecZN_d3NcL8N'
 ```
+
+# Add token to a topic
+```js
+curl --location --request POST 'https://iid.googleapis.com/iid/v1/esHa4rym1DT_ZefcYXviY2:APA91bHMEqomkMKlz3Y7XLcdxQZ-WMRfLt-ixhcwNOhmqW5blV9aAyMtPRXRaOwyOaGC1O-zwezC0EVrv3p7Ay9DkyevLPE1XrLMBFvsSDQKh-sbidDBqjuXsmW5tPfHQqkUxyCpTJ2i/rel/topics/movies' \
+--header 'Authorization: key=AAAAVuvkGx0:APA91bHdBSEZkrv4t1xn7pARbifN3EYuRpKOttsJXOrYJLxOIyMC8LCbnxMg5dshLid19YPk0Q8siFQjtsdvafmJtT117RVOK_NyJG3N9RJCtBJq6G3n3vLijNualLvjecZN_d3NcL8N'
+```
+
+# Add multiple token to a topic
+```js
+curl --location --request POST 'https://iid.googleapis.com/iid/v1:batchAdd' \
+--header 'Authorization: key=AAAAVuvkGx0:APA91bHdBSEZkrv4t1xn7pARbifN3EYuRpKOttsJXOrYJLxOIyMC8LCbnxMg5dshLid19YPk0Q8siFQjtsdvafmJtT117RVOK_NyJG3N9RJCtBJq6G3n3vLijNualLvjecZN_d3NcL8N' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "to": "/topics/movies",
+    "registration_tokens": [
+        "esHa4rym1DT_ZefcYXviY2:APA91bHMEqomkMKlz3Y7XLcdxQZ-WMRfLt-ixhcwNOhmqW5blV9aAyMtPRXRaOwyOaGC1O-zwezC0EVrv3p7Ay9DkyevLPE1XrLMBFvsSDQKh-sbidDBqjuXsmW5tPfHQqkUxyCpTJ2i"
+    ]
+}'
+```
