@@ -26,22 +26,11 @@ curl -X POST -H "Authorization: key=AAAAVuvkGx0:APA91bHdBSEZkrv4t1xn7pARbifN3EYu
         ]
     }
   },
-  "to": "cExOaKCUobmiNbpbAOLu_y:APA91bH5W9VcP4xpF6OTRo9s6uHaJTfewWBF3ORsPlfifgqMXco3HPQVicPTzaAHV5d4DkRMe3be5tJkTk3h-PJMNQ8WsmJ58uXcwpiMaIJ9qtXiSyzi0bIO_53wNmO8kDAy9uNG3hh5"
+  "to": "esHa4rym1DT_ZefcYXviY2:APA91bHMEqomkMKlz3Y7XLcdxQZ-WMRfLt-ixhcwNOhmqW5blV9aAyMtPRXRaOwyOaGC1O-zwezC0EVrv3p7Ay9DkyevLPE1XrLMBFvsSDQKh-sbidDBqjuXsmW5tPfHQqkUxyCpTJ2i"
 }' https://fcm.googleapis.com/fcm/send
-
-
-
-// get the info from fcm_token
-
-curl https://iid.googleapis.com/iid/info/ APA91bE94ivxe288YYBdYCM0E3uCGrK9XFebg4WtRvHuu8Ji2Em-O-Innpqq2zZu4FxbT-JSS9zivDTe-XOeQ4JuOshg3WH2gXKcdA6FbTjFMqHLdHFW51LqhMK6a9hZ2oNWttJaydv5 "Authorization: key=AAAAVuvkGx0:APA91bHdBSEZkrv4t1xn7pARbifN3EYuRpKOttsJXOrYJLxOIyMC8LCbnxMg5dshLid19YPk0Q8siFQjtsdvafmJtT117RVOK_NyJG3N9RJCtBJq6G3n3vLijNualLvjecZN_d3NcL8N" -H "Content-Type: application/json"
-
-
-
-
-
-
 
 
 
 
 curl -H "Authorization: Bearer cb73e0e3fe68be" ipinfo.io
+
