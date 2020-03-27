@@ -17,7 +17,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://iid.googleapis.com/iid/info/esHa4rym1DT_ZefcYXviY2:APA91bHMEqomkMKlz3Y7XLcdxQZ-WMRfLt-ixhcwNOhmqW5blV9aAyMtPRXRaOwyOaGC1O-zwezC0EVrv3p7Ay9DkyevLPE1XrLMBFvsSDQKh-sbidDBqjuXsmW5tPfHQqkUxyCpTJ2i",
+					"raw": "https://iid.googleapis.com/iid/info/dGYPz3wC2aGTFKKUQ279KG:APA91bFYFMjRMxHfXABGyw3_G3b0iOTlyK8P8TLqf1trOsav8U1mCUvw2J2YUKHfLNnDKXC6SNGgD4z9e5eOTyr07-wJnpwGWu0-8OJJpQ9mrOyDVY2XRTjyyCjAjbYLBda0l03lNTC_",
 					"protocol": "https",
 					"host": [
 						"iid",
@@ -27,7 +27,7 @@
 					"path": [
 						"iid",
 						"info",
-						"esHa4rym1DT_ZefcYXviY2:APA91bHMEqomkMKlz3Y7XLcdxQZ-WMRfLt-ixhcwNOhmqW5blV9aAyMtPRXRaOwyOaGC1O-zwezC0EVrv3p7Ay9DkyevLPE1XrLMBFvsSDQKh-sbidDBqjuXsmW5tPfHQqkUxyCpTJ2i"
+						"dGYPz3wC2aGTFKKUQ279KG:APA91bFYFMjRMxHfXABGyw3_G3b0iOTlyK8P8TLqf1trOsav8U1mCUvw2J2YUKHfLNnDKXC6SNGgD4z9e5eOTyr07-wJnpwGWu0-8OJJpQ9mrOyDVY2XRTjyyCjAjbYLBda0l03lNTC_"
 					]
 				}
 			},
@@ -113,7 +113,43 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"to\":\"cxhuTJ2ayxsdrefYBd0uFi:APA91bFuLnsHIyp-XYnx0OlkuHtPigaGTwsl9vdzdMX1FE1_UJ_vb4EhKqh0CVpLrpGpOiTMJ8sAnXbnsJ6vyWUuwFhjt_omadlquIzajAxvdbgWQBShk5N4tRoKNHnJ6DeS5NHfqf-k\",\n    \"data\": {\n        \"notification\": {\n            \"title\": \"FCM Message\",\n            \"body\": \"This is an FCM Message\",\n            \"icon\": \"https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png\",\n            \"image\": \"https://web-push-book.gauntface.com/images/demos/unsplash-farzad-nazifi-1600x1100.jpg\",\n            \"badge\": \"https://web-push-book.gauntface.com/images/demos/badge-128x128.png\",\n            \"timestamp\": \"1585217717\",\n            \"data\": {\n                \"actionA\": \"this is the url for first button\",\n                \"actionB\": \"this is the url for second button\",\n                \"url\": \"https://googles.com\"\n            },\n            \"actions\": [\n                {\n                    \"action\": \"actionA\",\n                    \"title\": \"Tea\",\n                    \"icon\": \"https://web-push-book.gauntface.com/images/demos/action-1-128x128.png\"\n                },\n                {\n                    \"action\": \"actionB\",\n                    \"title\": \"Doughnut\",\n                    \"icon\": \"https://web-push-book.gauntface.com/images/demos/action-2-128x128.png\"\n                }\n            ]\n        }\n    }\n}",
+					"raw": "{\n\t\"to\":\"d5ItqwQM1hqh0Z33cJDQ28:APA91bFvaLjtS2pjkkXZzfUr2DHVa35wUOsdHe2Tgyqnc9sxbFtmIg3c_S7Fx-y3EEnOD2awBTAWZeZitX_qQIEmCniKIqwIxgSFHfLhxQ1pt99letTbyD4584kBEPxlYnOJyNWbjREC\",\n    \"data\": {\n        \"notification\": {\n            \"title\": \"FCM Message\",\n            \"body\": \"This is an FCM Message\",\n            \"icon\": \"https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png\",\n            \"image\": \"https://web-push-book.gauntface.com/images/demos/unsplash-farzad-nazifi-1600x1100.jpg\",\n            \"badge\": \"https://web-push-book.gauntface.com/images/demos/badge-128x128.png\",\n            \"timestamp\": \"1585217717\",\n            \"data\": {\n                \"actionA\": \"https://aasaancredits.com/apply.html\",\n                \"actionB\": \"https://aasaancredits.com/check-your-loan-eligibility.html\",\n                \"url\": \"https://aasaancredits.com/\"\n            },\n            \"actions\": [\n                {\n                    \"action\": \"actionA\",\n                    \"title\": \"Apply Now\",\n                    \"icon\": \"https://web-push-book.gauntface.com/images/demos/action-1-128x128.png\"\n                },\n                {\n                    \"action\": \"actionB\",\n                    \"title\": \"Check Rates\",\n                    \"icon\": \"https://web-push-book.gauntface.com/images/demos/action-2-128x128.png\"\n                }\n            ]\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fcm.googleapis.com/fcm/send",
+					"protocol": "https",
+					"host": [
+						"fcm",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"fcm",
+						"send"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Notification to multiple users upto 1000 users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "key=AAAAVuvkGx0:APA91bHdBSEZkrv4t1xn7pARbifN3EYuRpKOttsJXOrYJLxOIyMC8LCbnxMg5dshLid19YPk0Q8siFQjtsdvafmJtT117RVOK_NyJG3N9RJCtBJq6G3n3vLijNualLvjecZN_d3NcL8N",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"registration_ids\": [\n        \"feSUJKwkhCS6NK8BoMudaF:APA91bGRncc0Qf2gonHG36JrlUVANTAo7fuRlMFXEVg3C_EPXJvAliKVJTDJmhmQXZA9hVoBz7MaxiUaLU2ozgDGvIGQxGrUvK1zlLEc4l7ylaGAO02Dv4Czqxmeqhxm3zwLi6_pSnFq\",\n        \"fpZI-MCzI2yoKQtvj7rJTK:APA91bHs7E7Y6IpPDu-k8s00JaM9-7EpESV4-ffZf2lqd-K_HrAnJa2Y9P_e_lntO0yRAXoZjXQLnY6dRXcy_p7btTsCSt9XYzvXP2fYCLF-66Z9-79L43__HYZx2ZNVzIvtZV6RXTNs\"\n    ],\n    \"data\": {\n        \"notification\": {\n            \"title\": \"FCM Message\",\n            \"body\": \"This is an FCM Message\",\n            \"icon\": \"https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png\",\n            \"image\": \"https://web-push-book.gauntface.com/images/demos/unsplash-farzad-nazifi-1600x1100.jpg\",\n            \"badge\": \"https://web-push-book.gauntface.com/images/demos/badge-128x128.png\",\n            \"timestamp\": \"1585217717\",\n            \"data\": {\n                \"actionA\": \"https://aasaancredits.com/apply.html\",\n                \"actionB\": \"https://aasaancredits.com/check-your-loan-eligibility.html\",\n                \"url\": \"https://aasaancredits.com/\"\n            },\n            \"actions\": [\n                {\n                    \"action\": \"actionA\",\n                    \"title\": \"Apply Now\",\n                    \"icon\": \"https://web-push-book.gauntface.com/images/demos/action-1-128x128.png\"\n                },\n                {\n                    \"action\": \"actionB\",\n                    \"title\": \"Check Rates\",\n                    \"icon\": \"https://web-push-book.gauntface.com/images/demos/action-2-128x128.png\"\n                }\n            ]\n        }\n    },\n    \"priority\": \"high\",\n    \"dry_run\":false\n}",
 					"options": {
 						"raw": {
 							"language": "json"

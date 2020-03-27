@@ -39,6 +39,12 @@
             firebase.initializeApp(config);
 
             const messaging = firebase.messaging();
+            //The method usePublicVapidKey allows FCM to use the VAPID key credential when sending message requests to different push services.
+            // Add the public key generated from the console here.
+            messaging.usePublicVapidKey(
+                "BCSSbv78qCy_aiqPXZQ9hgQc_zoWVXJ9j6IzTQJ9X1KKJ9iCN95yUvg0GDdN4ad3oy3hlFW9KtPUpSkC-taA0GY");
+
+
             const registration = await navigator.serviceWorker.register('firebase-messaging-sw.js');
             messaging.useServiceWorker(registration);
 
