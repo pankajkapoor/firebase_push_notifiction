@@ -95,10 +95,23 @@
 
             });
 
-
-
-
             async function saveTokenToDB(token) {
+
+                function isTokenSentToServer() {
+                    return window.localStorage.getItem('sentToServer') === '1';
+                }
+
+                function setTokenSentToServer(sent) {
+                    window.localStorage.setItem('sentToServer', sent ? '1' : '0');
+                }
+
+                if (isTokenSentToServer()) {
+                    console.log('already sent to server')
+                    return true;
+                }
+
+                console.log('sending to server');
+
                 const _navigator = {};
                 for (let i in navigator) _navigator[i] = navigator[i];
 
@@ -109,7 +122,7 @@
                     ip_details = await response.json();
                 }
 
-                fetch("api/push_notification", {
+                const apiResponse = await fetch("http://localhost/aasa/api/push_notification", {
                     method: "POST",
                     headers: {
                         Accept: "application/json",
@@ -121,7 +134,16 @@
                         ip_details
                     })
                 });
+
+                if (apiResponse.status == 200) {
+                    const data = await apiResponse.json();
+                    setTokenSentToServer(true);
+                    // console.log(data)
+                }
             }
+
+
+
 
 
 

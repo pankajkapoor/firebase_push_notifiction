@@ -6,20 +6,44 @@ importScripts("push_message.js");
 
 // CAUTION : this should be always here if not then it will not work on mozilla browser! it should always be before it const messaging = firebase.messaging();
 self.addEventListener("notificationclick", function(event) {
-  console.log(event.notification);
+  //console.log(event.notification);
   const data = event.notification.data;
 
   event.notification.close();
 
-  if (event.action === "actionA") {
-    clients.openWindow(data.actionA);
-    // silentlyLikeItem();
-  } else if (event.action === "actionB") {
-    clients.openWindow(data.actionB);
-  } else {
-    // if user click on the notifiction itself
-    event.waitUntil(clients.openWindow(data.url));
-  }
+  event.waitUntil(
+    clients
+      .matchAll({ includeUncontrolled: true, type: "window" })
+      .then(windowClients => {
+        // Check if there is already a window/tab open with the target URL
+        for (var i = 0; i < windowClients.length; i++) {
+          var client = windowClients[i];
+          // If so, just focus it.
+          if (
+            client.url === data.url &&
+            event.action == "" &&
+            "focus" in client
+          ) {
+            return client.focus();
+          }
+        }
+
+        // If not, then open the target URL in a new window/tab.
+        let openUrl = "";
+        if (clients.openWindow) {
+          if (event.action === "actionA") {
+            openUrl = data.actionA;
+            // silentlyLikeItem();
+          } else if (event.action === "actionB") {
+            openUrl = data.actionB;
+          } else {
+            // if user click on the notifiction itself
+            openUrl = data.url;
+          }
+          return event.waitUntil(clients.openWindow(openUrl));
+        }
+      })
+  );
 });
 
 self.addEventListener("notificationclose", function(e) {
