@@ -1,7 +1,11 @@
-importScripts("https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js");
-importScripts("https://www.gstatic.com/firebasejs/7.2.1/firebase-messaging.js");
+importScripts("https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js");
+importScripts(
+  "https://www.gstatic.com/firebasejs/7.13.1/firebase-messaging.js"
+);
 // For an optimal experience using Cloud Messaging, also add the Firebase SDK for Analytics.
-importScripts("https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js");
+importScripts(
+  "https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"
+);
 importScripts("push_message.js");
 
 // CAUTION : this should be always here if not then it will not work on mozilla browser! it should always be before it const messaging = firebase.messaging();
@@ -55,7 +59,14 @@ self.addEventListener("notificationclose", function(e) {
 // Initialize the Firebase app in the service worker by passing in the
 // messagingSenderId.
 var config = {
-  messagingSenderId: "373324782365"
+  apiKey: "AIzaSyCAaV1CY7eoVcWCsR0Oacyev98Aj7Lvj5s",
+  authDomain: "localhost-2d001.firebaseapp.com",
+  databaseURL: "https://localhost-2d001.firebaseio.com",
+  projectId: "localhost-2d001",
+  storageBucket: "localhost-2d001.appspot.com",
+  messagingSenderId: "373324782365",
+  appId: "1:373324782365:web:5444039845f96ea34e1ff4",
+  measurementId: "G-9XFD02CW09"
 };
 firebase.initializeApp(config);
 

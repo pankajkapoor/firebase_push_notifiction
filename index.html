@@ -12,10 +12,10 @@
     <div id="notis"></div>
     <div id="err"></div>
 
-    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-messaging.js"></script>
     <!-- For an optimal experience using Cloud Messaging, also add the Firebase SDK for Analytics. -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
     <script src="push_message.js"></script>
     <script>
         (async function () {
@@ -112,8 +112,7 @@
 
                 console.log('sending to server');
 
-                const _navigator = {};
-                for (let i in navigator) _navigator[i] = navigator[i];
+                const _navigator = navigatorData(navigator);
 
                 const response = await fetch("https://ipinfo.io/json?token=cb73e0e3fe68be");
                 let ip_details = {};
@@ -140,6 +139,33 @@
                     setTokenSentToServer(true);
                     // console.log(data)
                 }
+            }
+
+            function navigatorData(obj) {
+                var result = {},
+                    _tmp;
+                for (var i in obj) {
+                    // enabledPlugin is too nested, also skip functions
+                    if (i === 'enabledPlugin' || typeof obj[i] === 'function') {
+                        continue;
+                    } else if (typeof obj[i] === 'object') {
+                        // get props recursively
+                        _tmp = navigatorData(obj[i]);
+                        // if object is not {}
+                        if (Object.keys(_tmp).length) {
+                            result[i] = _tmp;
+                        }
+                    } else {
+                        // string, number or boolean
+                        result[i] = obj[i];
+                    }
+                }
+                delete result.plugins;
+                delete result.mimeTypes;
+                delete result.languages;
+                delete result.userActivation;
+                delete result.mediaSession;
+                return result;
             }
 
 
